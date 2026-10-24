@@ -1,4 +1,4 @@
-# Corrección del Trabajo 1: Sintaxis Python
+# Corrección del Trabajo 1: Sintaxis Python (evaluación 1)
 
 **Entrega:** [`calculadora_promedios.py`](calculadora_promedios.py)
 **Resultado:** ¡Superado! (mínimo para superarlo: 5/10)
