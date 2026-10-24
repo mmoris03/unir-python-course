@@ -35,9 +35,7 @@ def ingresar_calificaciones() -> tuple[list[str], list[float]]:
     materias: list[str] = []
     calificaciones: list[float] = []
 
-    materias.append(_pedir_materia())
-    calificaciones.append(_pedir_calificacion())
-    while _preguntar_si_no("¿Quieres introducir otra nota?"):
+    while _preguntar_si_no("¿Quieres introducir una nota?"):
         materias.append(_pedir_materia())
         calificaciones.append(_pedir_calificacion())
 
