@@ -47,32 +47,19 @@ def calcular_promedio(calificaciones: list[float]) -> float:
 
 
 def determinar_estado(calificaciones: list[float], umbral: float = 5.0) -> tuple[list[int], list[int]]:
-    aprobadas: list[int] = []
-    reprobadas: list[int] = []
-
-    for indice, calificacion in enumerate(calificaciones):
-        if calificacion >= umbral:
-            aprobadas.append(indice)
-        else:
-            reprobadas.append(indice)
+    aprobadas = [i for i, c in enumerate(calificaciones) if c >= umbral]
+    reprobadas = [i for i, c in enumerate(calificaciones) if c < umbral]
 
     return aprobadas, reprobadas
 
 
 def encontrar_extremos(calificaciones: list[float]) -> tuple[int, int]:
-    calificacion_mas_alta = calificacion_mas_baja = calificaciones[0]
-    indice_nota_mas_alta = indice_nota_mas_baja = 0
+    indices = range(len(calificaciones))
 
-    for indice, calificacion in enumerate(calificaciones):
-        if calificacion > calificacion_mas_alta:
-            calificacion_mas_alta = calificacion
-            indice_nota_mas_alta = indice
-
-        if calificacion < calificacion_mas_baja:
-            calificacion_mas_baja = calificacion
-            indice_nota_mas_baja = indice
-
-    return indice_nota_mas_alta, indice_nota_mas_baja
+    return (
+        max(indices, key=calificaciones.__getitem__),
+        min(indices, key=calificaciones.__getitem__),
+    )
 
 
 def _mostrar_materias_y_calificaciones(materias: list[str], calificaciones: list[float]) -> None:
