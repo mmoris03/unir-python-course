@@ -1,8 +1,7 @@
-# Corrección del Trabajo 1: Sintaxis Python (evaluación 2)
+# Evaluación 2 del Trabajo 1: Sintaxis Python
 
 **Entrega:** [`calculadora_promedios.py`](calculadora_promedios.py)
 **Resultado:** ¡Superado! (mínimo para superarlo: 5/10)
-**Evaluación anterior:** [`correccion-evaluacion-1.md`](correccion-evaluacion-1.md) (9,8 / 10)
 
 ## Nota final: 10 / 10
 
@@ -12,7 +11,6 @@
 | Manejo de estructuras de datos | 25% | 25 / 25 |
 | Cálculos y lógica | 25% | 25 / 25 |
 | Validación de entrada y manejo de errores | 20% | 20 / 20 |
-| **Total** | **100%** | **100 / 100** |
 
 ## Detalle por criterio
 
@@ -30,6 +28,3 @@ La validación cubre las entradas solicitadas y evita que una respuesta no recon
 
 ## Resumen global
 La entrega resuelve de forma completa los requisitos principales: entrada validada, listas paralelas, cálculos correctos y un resumen final claro. Destaca la separación del código en funciones pequeñas y el uso coherente de índices para relacionar notas con materias. También se contempla correctamente que el usuario termine sin introducir ninguna materia. No se observan mejoras necesarias para cumplir los criterios evaluados.
-
-## Cambios respecto a la evaluación 1
-Único punto descontado en la evaluación anterior (criterio 4, 18/20): la rama de `main` para el caso sin materias no era alcanzable, porque `ingresar_calificaciones` obligaba a introducir una primera materia. Ahora pregunta antes de pedir cada materia, incluida la primera, y el caso vacío se resuelve en `main` sin llamar a `calcular_promedio` ni a `encontrar_extremos`. Con ello el criterio 4 pasa de 18/20 a 20/20 y la nota total, de 9,8 a 10.
