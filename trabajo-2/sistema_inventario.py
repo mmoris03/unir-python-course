@@ -11,14 +11,14 @@ class Producto:
         self.actualizar_cantidad(cantidad)
 
     def actualizar_precio(self, nuevo_precio: float) -> None:
-        if not isinstance(nuevo_precio, (int, float)):
+        if isinstance(nuevo_precio, bool) or not isinstance(nuevo_precio, (int, float)):
             raise TypeError("El precio debe ser un número")
         if not nuevo_precio >= 0:
             raise ValueError("El precio debe ser mayor o igual que cero")
-        self.precio = nuevo_precio
+        self.precio = float(nuevo_precio)
 
     def actualizar_cantidad(self, nueva_cantidad: int) -> None:
-        if not isinstance(nueva_cantidad, int):
+        if isinstance(nueva_cantidad, bool) or not isinstance(nueva_cantidad, int):
             raise TypeError("La cantidad debe ser un número entero")
         if not nueva_cantidad >= 0:
             raise ValueError("La cantidad debe ser mayor o igual que cero")
