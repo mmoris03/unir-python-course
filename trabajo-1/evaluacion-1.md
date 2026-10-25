@@ -1,4 +1,4 @@
-# Corrección del Trabajo 1: Sintaxis Python (evaluación 1)
+# Evaluación 1 del Trabajo 1: Sintaxis Python
 
 **Entrega:** [`calculadora_promedios.py`](calculadora_promedios.py)
 **Resultado:** ¡Superado! (mínimo para superarlo: 5/10)
@@ -11,7 +11,6 @@
 | Manejo de estructuras de datos | 25% | 25 / 25 |
 | Cálculos y lógica | 25% | 25 / 25 |
 | Validación de entrada y manejo de errores | 20% | 18 / 20 |
-| **Total** | **100%** | **98 / 100** |
 
 ## Detalle por criterio
 
@@ -36,14 +35,3 @@ La validación de nombres, calificaciones y respuesta de continuidad es sólida.
 
 ## Resumen global
 La entrega resuelve de forma clara los requisitos principales: entrada validada, almacenamiento en listas, cálculos y resumen completo. Destaca la separación en funciones y el uso correcto de índices para relacionar notas con materias. La mejora más importante es permitir que el usuario termine sin introducir materias, para que el caso vacío contemplado en `main` pueda ocurrir realmente. También conviene tener presente que el promedio requiere una lista no vacía, condición que actualmente depende del flujo de entrada.
-
-## Corrección aplicada
-`ingresar_calificaciones` pregunta ahora si se quiere introducir una nota **antes** de pedir cada materia, incluida la primera:
-
-```python
-while _preguntar_si_no("¿Quieres introducir una nota?"):
-    materias.append(_pedir_materia())
-    calificaciones.append(_pedir_calificacion())
-```
-
-Si el usuario responde `n` desde el principio, las listas quedan vacías y `main` muestra "No se ingresó ninguna materia." sin llamar a `calcular_promedio` ni a `encontrar_extremos`, que requieren una lista no vacía. Con esto la rama del caso vacío es alcanzable y se resuelve el error del criterio 4.
