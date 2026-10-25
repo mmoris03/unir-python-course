@@ -1,5 +1,7 @@
 class Producto:
     def __init__(self, nombre: str, precio: float, cantidad: int) -> None:
+        if not isinstance(nombre, str):
+            raise TypeError("El nombre del producto debe ser un texto")
         nombre = nombre.strip()
         if not nombre:
             raise ValueError("El nombre del producto no debe estar en blanco")
